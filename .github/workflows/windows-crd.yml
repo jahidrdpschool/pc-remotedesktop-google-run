@@ -1,4 +1,4 @@
-name: Windows-CRD
+name: WinPC
 
 on: 
   workflow_dispatch:
@@ -16,9 +16,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Initializing Setup
+    - name: Initializing setup
       run: ./setup.ps1
     - name: Starting CRD
       run: ${{ github.event.inputs.authcode }} -pin=${{ github.event.inputs.pincode }}
-    - name: Keep Alive
+    - name: Keep alive
       run: ./timeout.ps1
